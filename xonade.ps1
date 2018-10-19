@@ -59,7 +59,7 @@ if (!(Test-Path "X.HD")) {
 
 	Write-Host "Writing Xonade Accounts Managing BiP...";	Set-Content "X.HD\X.SYS\Plugins\Accounts.x" "> copyleft xonade, licensed under MIT`n> account manager for xonade"
 
-	Write-Host "Writing Xonade Enviroment...";				Set-Content "X.HD\X.SYS\Runtime\Env.ps1" "# copyleft xonade, licensed under MIT`n# enviroment for xonade runtime"
+	Write-Host "Writing Xonade Enviroment...";				Set-Content "X.HD\X.SYS\Runtime\Env.ps1" "# copyleft xonade, licensed under MIT`n# enviroment for xonade runtime`n`n@{`n`t`"Variables`"`t= @{};`n`t`"Labels`"`t= @{};`n}"
 	Write-Host "Writing Xonade Command Parser...";			Set-Content "X.HD\X.SYS\Runtime\Command.ps1" "# copyleft xonade, licensed under MIT`n# command interpreter"
 	Write-Host "Writing Xonade Script Parser...";			Set-Content "X.HD\X.SYS\Runtime\X.ps1" "# copyleft xonade, licensed under MIT`n# x lang compiler"
 
