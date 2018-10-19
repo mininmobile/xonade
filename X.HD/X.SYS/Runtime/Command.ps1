@@ -8,6 +8,9 @@ param (
 # remove undentation
 $c = $command -replace "^[ |\t]+", ""
 
+# remove comments
+$c = $c -replace "#.*", ""
+
 # labels
 $c = $c -replace "^:", "label "
 
