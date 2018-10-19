@@ -9,7 +9,7 @@ param (
 $c = $command -replace "^[ |\t]+", ""
 
 # remove comments
-$c = $c -replace "#.*", ""
+$c = $c -replace ">.*", ""
 
 # labels
 $c = $c -replace "^:", "label "
@@ -23,6 +23,9 @@ if ($c.Contains("`"")) {
 	for ($i = 0; $i -lt $strings.Count; $i++) { if ((($i) % 2) -eq 0) { $strings[$i] = $strings[$i].ToLower() } }
 	$c = ([string]::Join("`"", $strings))
 }
+
+# split
+$c = $c + " " -split " (?=(?:[^`"]|`"[^`"]*`")*$)"
 
 # return formatted command
 $c
