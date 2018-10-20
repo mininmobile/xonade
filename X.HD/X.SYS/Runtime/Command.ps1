@@ -9,7 +9,7 @@ param (
 $c = $command -replace "^[ |\t]+", ""
 
 # remove comments
-$c = $c -replace ">.*", ""
+$c = $c -replace "<>.*", ""
 
 # labels
 $c = $c -replace "^:", "label "

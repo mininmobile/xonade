@@ -1,10 +1,12 @@
-> copyleft xonade, licensed under MIT
-> xonade console
+<> copyleft xonade, licensed under MIT
+<> xonade console
 
 clear
 
 print "Xonade Console\n"
+
 :x.console.prompt
-print -n "\n> "
-pause
+	var x.input < "> "
+
+	eval $x.input
 goto x.console.prompt

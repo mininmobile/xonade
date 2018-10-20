@@ -26,15 +26,23 @@ for ($xi = 0; $xi -lt $xlines.Count; $xi++) {
 	#Write-Host ([string]::Join(" ", $xc))
 
 	switch ($xc) {
-		"print" { Write-Host (Format-String $xc[1]); break }
+		"print" {
+			switch ($xc[1]) {
+				"-n" { Write-Host (Format-String $xc[2]) -n }
+
+				default { Write-Host (Format-String $xc[1]) }
+			}
+		break }
+
 		"pause" { [Console]::ReadKey() | Out-Null; break }
 		"clear" { Clear-Host; break }
 
 		"label" { $Script:xenv.Labels[$xc[1]] = $xi; break }
 		"goto" { $Script:xi = $xenv.Labels[$xc[1]] - 1; break }
 
-		"function" { break }
 		"var" { break }
+
+		"function" { break }
 
 		"null" { break }
 
