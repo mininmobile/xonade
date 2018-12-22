@@ -3,10 +3,11 @@
 
 clear
 
-print "Xonade Console\n"
+print Xonade Console\n
 
 :x.console.prompt
 	var x.input < "> "
 
-	eval $x.input
+	softeval print poo my pants
 goto x.console.prompt
+
